@@ -1,0 +1,14 @@
+1. Explica dos diferencias entre una API REST y un servidor GraphQL.
+Básicamente, en REST tienes varias rutas separadas para cada cosa (como /laptops o /usuarios), mientras que en GraphQL todo pasa por un solo endpoint, Otra diferencia es que REST te avienta todos los datos del modelo aunque no los ocupes, y en GraphQL tú le especificas exactamente qué campos quieres que te devuelva.
+
+2. Indica una situación en la que conviene usar REST y otra en la que conviene usar GraphQL.
+REST es mejor para un CRUD sencillo y directo (como el de este examen) o si vas a hacer una API pública tradicional, graphQL conviene más cuando los datos están muy anidados o si estás haciendo el backend para una app móvil donde necesitas ahorrar consumo de datos pidiendo solo la información necesaria.
+
+3. ¿Qué diferencia hay entre una imagen y un contenedor? ¿Qué papel cumple el Dockerfile en esa relación?
+La imagen es como la plantilla base que tiene el código y las dependencias, y el contenedor es esa misma imagen pero ya viva y ejecutándose. El Dockerfile es el script que tiene las instrucciones paso a paso para que Docker sepa cómo construir esa imagen desde cero.
+
+4. ¿Para qué sirve Docker Compose? En el mapeo 8000 : 8000, ¿Qué representa el primer 8000 y qué representa el segundo?
+Sirve para levantar y conectar varios contenedores al mismo tiempo usando un solo archivo (como nuestra API y la base de datos). En el mapeo 8000 : 8000, el primer número es el puerto expuesto en mi compu (el localhost), y el segundo es el puerto interno en el que está escuchando FastAPI dentro del contenedor.
+
+5. ¿Por qué las laptops del ejercicio 1 se guardan en MySQL y no en una lista de Python? ¿Qué identifica la llave primaria id?
+Se guardan en MySQL para que haya persistencia; si usamos una lista normal de Python, todo se guarda en la memoria RAM y se borra en cuanto detenemos el servidor. El id autoincremental sirve como llave primaria para identificar cada laptop de forma única y evitar que se confundan los registros.
